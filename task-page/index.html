@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding 驱动的个人数字名片开发实战</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="workspace">
+    <div class="grid" id="grid">
+
+      <!-- 左侧：任务详情 -->
+      <section class="panel">
+        <div class="panel-top">
+          <span class="ai-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/>
+              <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/>
+            </svg>
+            AI 实践
+          </span>
+          <div class="top-actions">
+            <button type="button" class="ghost-btn" id="feedbackBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4H8l-4 2.5v-5.2A8.4 8.4 0 1 1 21 11.5z"/>
+              </svg>
+              问题反馈
+            </button>
+            <button type="button" class="ghost-btn" id="recordBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 4h6M9 4a1 1 0 0 0-1 1v1h8V5a1 1 0 0 0-1-1"/>
+                <path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/>
+                <path d="M9 12h6M9 16h4"/>
+              </svg>
+              作答记录
+            </button>
+            <span class="score-pill">本次成绩 <b>--</b> 分</span>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <h1 class="title">Vibe Coding 驱动的个人数字名片开发实战</h1>
+          <p class="meta">练习时间：2026-10-21 12:49 至 2026-10-26 00:00</p>
+          <p class="meta">学生多次练习最高分达到60分</p>
+
+          <div class="desc-wrap">
+            <p class="desc" id="desc">面向数字经济专业学生，通过自然语言驱动编程（Vibe Coding）完成个人数字名片的需求对齐、代码生成、云端部署及迭代优化。任务链采用网状结构，支持环节间的灵活跳转与重做，最终目标是实现一个公网可访问的个人网站。</p>
+            <button type="button" class="collapse-btn" id="descToggle" aria-expanded="true">
+              <span>收起</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+            </button>
+          </div>
+
+          <hr class="divider">
+
+          <h2 class="section-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h10"/>
+            </svg>
+            任务流
+          </h2>
+
+          <article class="flow-step">
+            <div class="step-head">
+              <span class="step-check" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>
+              </span>
+              <span class="step-label">情景对话</span>
+              <span class="step-score">95 <small>分</small></span>
+            </div>
+
+            <h3 class="step-title">需求对齐与环境准备</h3>
+            <p class="step-desc">与 AI 扮演的项目经理沟通，明确“个人数字名片”的业务功能需求，并确认开发环境配置。</p>
+
+            <span class="tag">已完成条件：成功明确业务需求并确认环境就绪</span>
+
+            <button type="button" class="record-toggle" id="stepRecordToggle" aria-expanded="false">
+              作答记录
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <ul class="record-list" id="stepRecordList">
+              <li class="record-item"><span>2026-10-21 14:20</span><b>95 分</b></li>
+              <li class="record-item"><span>2026-10-21 13:05</span><b>88 分</b></li>
+              <li class="record-item"><span>2026-10-20 20:41</span><b>72 分</b></li>
+            </ul>
+          </article>
+
+          <div class="current-task">
+            <div class="current-row">
+              <span class="task-index">02 上传作品</span>
+              <span class="current-pill">当前任务</span>
+            </div>
+            <span class="current-name">应用生成</span>
+          </div>
+        </div>
+
+        <button type="button" class="collapse-fab" id="collapseFab" aria-label="收起侧栏" aria-expanded="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+      </section>
+
+      <!-- 右侧：任务与提交 -->
+      <aside class="aside" id="aside">
+        <section class="card">
+          <div class="card-head">
+            <span class="card-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="3"/>
+                <path d="M8 9h4M8 13h6"/>
+              </svg>
+            </span>
+            任务
+          </div>
+          <h3 class="task-name">应用生成</h3>
+          <p class="task-desc">使用 Vibe Coding 工具生成代码，并提交交互记录截图及本地运行成功的页面截图或录屏。</p>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <span class="card-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                <circle cx="8.5" cy="8.5" r="1.6"/>
+                <path d="M21 16l-5-5L5 21"/>
+              </svg>
+            </span>
+            提交作品
+          </div>
+
+          <div class="submit-box">
+            <div class="submit-meta">
+              <span>类型：<b>图片</b></span>
+              <span>数量：<b id="fileCount">1</b></span>
+            </div>
+            <p class="submit-desc">使用 Vibe Coding 工具生成代码，并提交交互记录截图及本地运行成功的页面截图或录屏。</p>
+          </div>
+
+          <div class="file-list" id="fileList"></div>
+
+          <button type="button" class="primary-btn" id="chooseFileBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            选择文件
+          </button>
+          <input type="file" id="fileInput" accept="image/*,video/*" multiple hidden>
+        </section>
+      </aside>
+
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
